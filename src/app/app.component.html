@@ -9,7 +9,6 @@
             placeholder="Escribe el operando A"
             [(ngModel)]="operandoA"
             name="operandoA">
-          <small id="helpId" class="text-muted">Help text</small>
         </div>
         <div class="form-group">
           <label>Operando B</label>
@@ -17,10 +16,19 @@
             placeholder="Escribe el operando B"
             [(ngModel)]="operandoB"
             name="operandoB">
-          <small id="helpId" class="text-muted">Help text</small>
         </div>
-        <button type="submit" class="btn btn-primary"
-          (click)="sumar()">Sumar</button>
+
+
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn btn-primary" data-id="sumar"
+          (click)="operarCon($event)">Sumar</button>
+          <button type="submit" class="btn btn-primary" data-id="restar"
+          (click)="operarCon($event)">Restar</button>
+          <button type="submit" class="btn btn-primary" data-id="multiplicar"
+          (click)="operarCon($event)">Multiplicar</button>
+          <button type="submit" class="btn btn-primary" data-id="dividir"
+          (click)="operarCon($event)">Dividir</button>
+        </div>
       </form>
       <p>Resultado: {{resultado}}</p>
     </div>
