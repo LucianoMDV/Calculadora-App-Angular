@@ -20,14 +20,14 @@
 
 
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn btn-primary" data-id="sumar"
-          (click)="operarCon($event)">Sumar</button>
-          <button type="submit" class="btn btn-primary" data-id="restar"
-          (click)="operarCon($event)">Restar</button>
-          <button type="submit" class="btn btn-primary" data-id="multiplicar"
-          (click)="operarCon($event)">Multiplicar</button>
-          <button type="submit" class="btn btn-primary" data-id="dividir"
-          (click)="operarCon($event)">Dividir</button>
+          <button type="submit" class="btn btn-primary"
+          (click)="operarCon('sumar')">Sumar</button>
+          <button type="submit" class="btn btn-primary"
+          (click)="operarCon('restar')">Restar</button>
+          <button type="submit" class="btn btn-primary"
+          (click)="operarCon('multiplicar')">Multiplicar</button>
+          <button type="submit" class="btn btn-primary"
+          (click)="operarCon('dividir')">Dividir</button>
         </div>
       </form>
       <p>Resultado: {{resultado}}</p>

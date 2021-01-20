@@ -8,30 +8,33 @@ import { element } from 'protractor';
 })
 export class AppComponent {
   titulo = 'Aplicacion calculadora';
-  operandoA: number = 0;
-  operandoB: number = 0;
-  resultado: number = 0;
+  operandoA = 0;
+  operandoB = 0;
+  resultado = 0;
 
   sumar(): void {
     this.resultado = this.operandoA + this.operandoB;
   }
 
-  operarCon(quien: Event): void {
-      console.log((quien.target as HTMLElement).getAttribute('data-id'));
-    switch ((quien.target as HTMLElement).getAttribute('data-id')) {
-      case "sumar":
-        this.resultado = this.operandoA + this.operandoB;
+  operarCon(quien: string): void {
+    let result = 0;
+      // console.log((quien.target as HTMLElement).getAttribute('data-id'));
+    console.log(quien);
+    switch (quien) {
+      case 'sumar':
+        result = this.operandoA + this.operandoB;
         break;
-      case "restar":
-        this.resultado = this.operandoA - this.operandoB;
+      case 'restar':
+        result = this.operandoA - this.operandoB;
         break;
-      case "dividir":
-        this.resultado = this.operandoA / this.operandoB;
+      case 'dividir':
+        result = this.operandoA / this.operandoB;
         break;
-      case "multiplicar":
-        this.resultado = this.operandoA * this.operandoB;
+      case 'multiplicar':
+        result = this.operandoA * this.operandoB;
         break;
     }
+    this.resultado = !isNaN(result) ? result : 0;
 
   }
 }
